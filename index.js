@@ -1,15 +1,21 @@
-const { request, response } = require('express')
+const cors = require('cors')
+
+
 const express = require('express');
 
 const uuid = require('uuid')
+
+const port = process.env.PORT || 3001;
+
 
 
 
 
 const app = express();
 app.use(express.json())
-
-const port = 3000;
+// Permitindo o Front-End acessar informaçoes aqui com o CORS
+app.use(cors())
+//const port = 3000;
 
 
 
