@@ -41,7 +41,7 @@ const middleware = (request,response,next) => {
 
 const requests = []
 
-app.get('/hamburguer', (request, response) => {
+app.get('/', (request, response) => {
     return response.json("hello world")
 })
 
