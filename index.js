@@ -1,11 +1,12 @@
-const cors = require('cors')
+const cors = require('cors');
+const { response } = require('express');
 
 
 const express = require('express');
 
 const uuid = require('uuid')
 
-const port = process.env.PORT || 3001;
+//const port = process.env.PORT || 3001;
 
 
 
@@ -15,7 +16,7 @@ const app = express();
 app.use(express.json())
 // Permitindo o Front-End acessar informaçoes aqui com o CORS
 app.use(cors())
-//const port = 3000;
+const port = 3000;
 
 
 
@@ -39,6 +40,10 @@ const middleware = (request,response,next) => {
 // ROUTE
 
 const requests = []
+
+app.get('/hamburguer', (request, response) => {
+    return response.json("hello world")
+})
 
 // Rota que lista todos os pedidos
 app.get('/hamburguer', (request, response) => {
